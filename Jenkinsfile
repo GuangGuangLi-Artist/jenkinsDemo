@@ -2,13 +2,13 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven 3.9.5'
+        maven 'Maven 3.8.1'
         jdk 'JDK 17'
     }
 
     environment {
         MAVEN_OPTS = '-Xmx1024m'
-        APP_NAME = 'demo'
+        APP_NAME = 'jenkinsDemo'
         APP_VERSION = '0.0.1-SNAPSHOT'
     }
 
@@ -93,7 +93,7 @@ pipeline {
                 echo '🚀 Deploying application...'
 
                 script {
-                    def remoteHost = 'username@XXX.XXX.XXX.XXX'
+                    def remoteHost = 'root@192.168.1.134'
                     def deployPath = '/opt/deployments'
                     def jarFile = "${APP_NAME}-${APP_VERSION}.jar"
 
